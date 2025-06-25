@@ -3,8 +3,6 @@
 #include <iomanip>
 #include <sstream>
 
-Logger* Logger::instancePtr = nullptr;
-
 Logger::Logger(){}
 
 Logger::~Logger()
@@ -13,19 +11,27 @@ Logger::~Logger()
         logFile.close();
 }
 
-Logger *Logger::getInstance()
+Logger& Logger::getInstance()
 {
-    if (instancePtr == nullptr)
-    {
-        instancePtr = new Logger();
-    }
-    return instancePtr;
+    // Old way, not thread-safe
+
+    // if (instancePtr == nullptr)
+    // {
+    //     instancePtr = new Logger();
+    // }
+    // return instancePtr;
+
+    // Meyers Singleton --> best practice
+    static Logger instance;
+    return instance;
+
 }
 
 std::string Logger::getTimeStamp()
 {
     std::ostringstream oss;
     std::time_t t = std::time(nullptr);
+    
     std::tm tm = *std::localtime(&t);
     oss << std::put_time(&tm, "%Y-%m-%d %H:%M:%S");
     return oss.str();

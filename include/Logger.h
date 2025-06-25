@@ -9,7 +9,7 @@
 class Logger
 {   
 private:
-    static Logger* instancePtr;
+    // static Logger* instancePtr;
 
     std::mutex m_mtx;
 
@@ -21,14 +21,14 @@ private:
 
     Logger();
     ~Logger();
-    // Prevent copy constructor 
+    // Prevent copy constructor: delete the copy constructor
     Logger(const Logger& obj) = delete;
-    // Prevent copy assignment
+    // Prevent copy assignment: delete the assignment operator
     Logger& operator=(const Logger&) = delete;
 
 public: 
     
-    static Logger* getInstance();
+    static Logger& getInstance();
 
     void setLogFile(const std::string& path);
 
