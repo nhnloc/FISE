@@ -1,6 +1,6 @@
 {
     "files.associations": {
-        "logger.h": "c",
+        "logger.h": "cpp",
         "cctype": "cpp",
         "clocale": "cpp",
         "cmath": "cpp",
@@ -57,6 +57,9 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "typeinfo": "cpp",
-        "cstring": "cpp"
+        "cstring": "cpp",
+        "bitset": "cpp",
+        "map": "cpp",
+        "regex": "cpp"
     }
 }
