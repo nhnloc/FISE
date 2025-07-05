@@ -227,6 +227,15 @@ app_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 app_SOURCE_DIR:STATIC=/home/nhnloc/0_CppWorkspace/FISE
 
+//Value Computed by CMake
+main_BINARY_DIR:STATIC=/home/nhnloc/0_CppWorkspace/FISE/build
+
+//Value Computed by CMake
+main_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+main_SOURCE_DIR:STATIC=/home/nhnloc/0_CppWorkspace/FISE
+
 
 ########################
 # INTERNAL cache entries

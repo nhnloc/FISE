@@ -13,8 +13,8 @@ file(GLOB SOURCES
     src/*.cpp    
 )
 
-add_executable(app ${SOURCES})
+add_executable(main ${SOURCES})
 
 find_package(Threads REQUIRED)
 
-target_link_libraries(app PRIVATE Threads::Threads)
+target_link_libraries(main PRIVATE Threads::Threads)

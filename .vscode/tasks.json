@@ -11,7 +11,8 @@
                 "-I",
                 "${workspaceFolder}/include/",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                // "${fileDirname}/${fileBasenameNoExtension}"
+                "${workspaceFolder}/build/bin/${fileBasenameNoExtension}",
             ],
             "options": {
                 "cwd": "${fileDirname}"

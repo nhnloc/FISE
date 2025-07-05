@@ -1,4 +1,5 @@
 #include "ThreadPool.h"
+#include "atomic"
 
 
 ThreadPool::ThreadPool(uint8_t numThreads) : m_uNumThreads(numThreads), m_bStopFlag(0)
@@ -25,13 +26,25 @@ ThreadPool::~ThreadPool()
     }
 }
 
-void ThreadPool::enqueue(std::function<void()> task)
+// void ThreadPool::enqueue(std::function<void()> task)
+// {
+//     {
+//         std::unique_lock lk(m_mutex);
+//         m_queueTasks.push(std::move(task));
+//     }
+//     m_condition.notify_one();
+// }
+
+
+void ThreadPool::waitForTask()
 {
-    {
-        std::unique_lock lk(m_mutex);
-        m_queueTasks.push(std::move(task));
+    // std::unique_lock<std::mutex> lock(m_mutex);
+    // m_condition.wait(lock, [this]{
+    //     return m_queueTasks.empty();
+    // });
+    while (m_taskCount > 0) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
     }
-    m_condition.notify_one();
 }
 
 void ThreadPool::workerLoop()
@@ -52,5 +65,10 @@ void ThreadPool::workerLoop()
             // lk.unlock();
         }
         task();
+        {
+            std::unique_lock<std::mutex> lock(m_mutex);
+            if (m_queueTasks.empty())
+                m_condition.notify_all();  // Notify waiting threads
+        }
     }
 }

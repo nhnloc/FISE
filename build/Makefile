@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named app
+# Target rules for targets named main
 
 # Build rule for target.
-app: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 app
-.PHONY : app
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-app/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/build
-.PHONY : app/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 src/FileInfo.o: src/FileInfo.cpp.o
 .PHONY : src/FileInfo.o
 
 # target to build an object file
 src/FileInfo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/FileInfo.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/FileInfo.cpp.o
 .PHONY : src/FileInfo.cpp.o
 
 src/FileInfo.i: src/FileInfo.cpp.i
@@ -142,7 +142,7 @@ src/FileInfo.i: src/FileInfo.cpp.i
 
 # target to preprocess a source file
 src/FileInfo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/FileInfo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/FileInfo.cpp.i
 .PHONY : src/FileInfo.cpp.i
 
 src/FileInfo.s: src/FileInfo.cpp.s
@@ -150,7 +150,7 @@ src/FileInfo.s: src/FileInfo.cpp.s
 
 # target to generate assembly for a file
 src/FileInfo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/FileInfo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/FileInfo.cpp.s
 .PHONY : src/FileInfo.cpp.s
 
 src/FileScanner.o: src/FileScanner.cpp.o
@@ -158,7 +158,7 @@ src/FileScanner.o: src/FileScanner.cpp.o
 
 # target to build an object file
 src/FileScanner.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/FileScanner.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/FileScanner.cpp.o
 .PHONY : src/FileScanner.cpp.o
 
 src/FileScanner.i: src/FileScanner.cpp.i
@@ -166,7 +166,7 @@ src/FileScanner.i: src/FileScanner.cpp.i
 
 # target to preprocess a source file
 src/FileScanner.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/FileScanner.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/FileScanner.cpp.i
 .PHONY : src/FileScanner.cpp.i
 
 src/FileScanner.s: src/FileScanner.cpp.s
@@ -174,7 +174,7 @@ src/FileScanner.s: src/FileScanner.cpp.s
 
 # target to generate assembly for a file
 src/FileScanner.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/FileScanner.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/FileScanner.cpp.s
 .PHONY : src/FileScanner.cpp.s
 
 src/Indexer.o: src/Indexer.cpp.o
@@ -182,7 +182,7 @@ src/Indexer.o: src/Indexer.cpp.o
 
 # target to build an object file
 src/Indexer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Indexer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Indexer.cpp.o
 .PHONY : src/Indexer.cpp.o
 
 src/Indexer.i: src/Indexer.cpp.i
@@ -190,7 +190,7 @@ src/Indexer.i: src/Indexer.cpp.i
 
 # target to preprocess a source file
 src/Indexer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Indexer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Indexer.cpp.i
 .PHONY : src/Indexer.cpp.i
 
 src/Indexer.s: src/Indexer.cpp.s
@@ -198,7 +198,7 @@ src/Indexer.s: src/Indexer.cpp.s
 
 # target to generate assembly for a file
 src/Indexer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Indexer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Indexer.cpp.s
 .PHONY : src/Indexer.cpp.s
 
 src/Logger.o: src/Logger.cpp.o
@@ -206,7 +206,7 @@ src/Logger.o: src/Logger.cpp.o
 
 # target to build an object file
 src/Logger.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Logger.cpp.o
 .PHONY : src/Logger.cpp.o
 
 src/Logger.i: src/Logger.cpp.i
@@ -214,7 +214,7 @@ src/Logger.i: src/Logger.cpp.i
 
 # target to preprocess a source file
 src/Logger.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Logger.cpp.i
 .PHONY : src/Logger.cpp.i
 
 src/Logger.s: src/Logger.cpp.s
@@ -222,7 +222,7 @@ src/Logger.s: src/Logger.cpp.s
 
 # target to generate assembly for a file
 src/Logger.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Logger.cpp.s
 .PHONY : src/Logger.cpp.s
 
 src/SearchEngine.o: src/SearchEngine.cpp.o
@@ -230,7 +230,7 @@ src/SearchEngine.o: src/SearchEngine.cpp.o
 
 # target to build an object file
 src/SearchEngine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/SearchEngine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/SearchEngine.cpp.o
 .PHONY : src/SearchEngine.cpp.o
 
 src/SearchEngine.i: src/SearchEngine.cpp.i
@@ -238,7 +238,7 @@ src/SearchEngine.i: src/SearchEngine.cpp.i
 
 # target to preprocess a source file
 src/SearchEngine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/SearchEngine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/SearchEngine.cpp.i
 .PHONY : src/SearchEngine.cpp.i
 
 src/SearchEngine.s: src/SearchEngine.cpp.s
@@ -246,7 +246,7 @@ src/SearchEngine.s: src/SearchEngine.cpp.s
 
 # target to generate assembly for a file
 src/SearchEngine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/SearchEngine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/SearchEngine.cpp.s
 .PHONY : src/SearchEngine.cpp.s
 
 src/ThreadPool.o: src/ThreadPool.cpp.o
@@ -254,7 +254,7 @@ src/ThreadPool.o: src/ThreadPool.cpp.o
 
 # target to build an object file
 src/ThreadPool.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/ThreadPool.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ThreadPool.cpp.o
 .PHONY : src/ThreadPool.cpp.o
 
 src/ThreadPool.i: src/ThreadPool.cpp.i
@@ -262,7 +262,7 @@ src/ThreadPool.i: src/ThreadPool.cpp.i
 
 # target to preprocess a source file
 src/ThreadPool.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/ThreadPool.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ThreadPool.cpp.i
 .PHONY : src/ThreadPool.cpp.i
 
 src/ThreadPool.s: src/ThreadPool.cpp.s
@@ -270,7 +270,7 @@ src/ThreadPool.s: src/ThreadPool.cpp.s
 
 # target to generate assembly for a file
 src/ThreadPool.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/ThreadPool.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ThreadPool.cpp.s
 .PHONY : src/ThreadPool.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -278,7 +278,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -286,7 +286,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -294,7 +294,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -305,7 +305,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... app"
+	@echo "... main"
 	@echo "... src/FileInfo.o"
 	@echo "... src/FileInfo.i"
 	@echo "... src/FileInfo.s"

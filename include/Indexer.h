@@ -9,7 +9,7 @@
 class Indexer
 {
 private: 
-    std::unordered_map<std::string, std::vector<std::string>> m_invertedIndex;
+    std::unordered_map<std::string, std::vector<FileInfo>> m_invertedIndex;
     std::mutex m_mutex;
     std::vector<std::string> tokenize(const std::string& fileName) const;
     std::regex m_regex;
@@ -19,6 +19,8 @@ private:
 public: 
 
     void addFile(const FileInfo& file);
-    std::vector<std::string> search(const std::string& keyword) const;
+    // std::vector<std::string> search(const std::string& keyword) const;
     void printIndex() const;
+
+    std::vector<FileInfo> getFilesForKeyword(const std::string& keyword);
 };

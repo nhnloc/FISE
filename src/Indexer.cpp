@@ -1,4 +1,5 @@
 #include "Indexer.h"
+#include "Logger.h"
 
 std::vector<std::string> Indexer::tokenize(const std::string &fileName) const
 {
@@ -24,26 +25,41 @@ void Indexer::addFile(const FileInfo &file)
     std::lock_guard<std::mutex> lock(m_mutex);
     for (const std::string& keyword : keywords)
     {
-        m_invertedIndex[keyword].push_back(file.strFilePath);
+        m_invertedIndex[keyword].push_back(file);
+        // Logger::getInstance().debug("File " + file.strFilePath + " added");
     }
 }
 
-std::vector<std::string> Indexer::search(const std::string &keyword) const
-{
-    return std::vector<std::string>();
-}
+// std::vector<std::string> Indexer::search(const std::string &keyword) const
+// {
+//     return std::vector<std::string>();
+// }
 
 void Indexer::printIndex() const
 {
 
-    for (const std::pair<const std::string, std::vector<std::string>>& n : m_invertedIndex)
+    for (const std::pair<const std::string, std::vector<FileInfo>>& n : m_invertedIndex)
     {
         // printKeyValue(n.first, n.second);
         std::cout << "Keyword: " << n.first << std::endl;
-        for (const std::string& path : n.second)
+        for (const FileInfo& fi : n.second)
         {
-            std::cout << "-------" << path << std::endl; 
+            // std::cout << "-------" << fi.strFilePath << std::endl; 
+            Logger::getInstance().info(fi.strFilePath + "| " + std::to_string(fi.uldFileSize) + "bytes\n");
         }
     }
     
+}
+
+std::vector<FileInfo> Indexer::getFilesForKeyword(const std::string &keyword)
+{
+    auto it = m_invertedIndex.find(keyword);
+    if (it != m_invertedIndex.end())
+    {
+        return it->second;
+    }
+    else 
+    {
+        return {};
+    }
 }

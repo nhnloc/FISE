@@ -4,8 +4,11 @@
             "name": "C/C++: g++ build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
-            "args": [],
+            //"program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}/build/bin/${fileBasenameNoExtension}",
+            "args": [
+                "-qfile",
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
